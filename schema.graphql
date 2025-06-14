@@ -1,0 +1,165 @@
+type Ambiant_AuthorityTransfer {
+  id: ID!
+  authority: String!
+}
+
+type Ambiant_CrocColdCmd {
+  id: ID!
+  input: String!
+}
+
+type Ambiant_CrocColdProtocolCmd {
+  id: ID!
+  input: String!
+}
+
+type Ambiant_CrocHotCmd {
+  id: ID!
+  input: String!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambiant_CrocKnockoutCmd {
+  id: ID!
+  input: String!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambiant_CrocKnockoutCross {
+  id: ID!
+  pool: String!
+  tick: BigInt!
+  isBid: Boolean!
+  pivotTime: BigInt!
+  feeMileage: BigInt!
+  commitEntropy: BigInt!
+}
+
+type Ambiant_CrocMicroBurnAmbient {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambiant_CrocMicroBurnRange {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambiant_CrocMicroMintAmbient {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambiant_CrocMicroMintRange {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambiant_CrocMicroSwap {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambiant_CrocSwap {
+  id: ID!
+  base: String!
+  quote: String!
+  poolIdx: BigInt!
+  isBuy: Boolean!
+  inBaseQty: Boolean!
+  qty: BigInt!
+  tip: BigInt!
+  limitPrice: BigInt!
+  minOut: BigInt!
+  reserveFlags: BigInt!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambiant_CrocWarmCmd {
+  id: ID!
+  input: String!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambiant_DisablePoolTemplate {
+  id: ID!
+  poolIdx: BigInt!
+}
+
+type Ambiant_HotPathOpen {
+  id: ID!
+  _0: Boolean!
+}
+
+type Ambiant_PriceImproveThresh {
+  id: ID!
+  token: String!
+  unitTickCollateral: BigInt!
+  awayTickTol: BigInt!
+}
+
+type Ambiant_ProtocolDividend {
+  id: ID!
+  token: String!
+  recv: String!
+}
+
+type Ambiant_ResyncTakeRate {
+  id: ID!
+  base: String!
+  quote: String!
+  poolIdx: BigInt!
+  takeRate: BigInt!
+}
+
+type Ambiant_SafeMode {
+  id: ID!
+  _0: Boolean!
+}
+
+type Ambiant_SetNewPoolLiq {
+  id: ID!
+  liq: BigInt!
+}
+
+type Ambiant_SetPoolTemplate {
+  id: ID!
+  poolIdx: BigInt!
+  feeRate: BigInt!
+  tickSize: BigInt!
+  jitThresh: BigInt!
+  knockout: BigInt!
+  oracleFlags: BigInt!
+}
+
+type Ambiant_SetRelayerTakeRate {
+  id: ID!
+  takeRate: BigInt!
+}
+
+type Ambiant_SetTakeRate {
+  id: ID!
+  takeRate: BigInt!
+}
+
+type Ambiant_TreasurySet {
+  id: ID!
+  treasury: String!
+  startTime: BigInt!
+}
+
+type Ambiant_UpgradeProxy {
+  id: ID!
+  proxy: String!
+  proxyIdx: BigInt!
+}
+

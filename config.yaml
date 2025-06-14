@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 10143
+  start_block: 0
+  contracts:
+  - name: ambiant
+    address:
+    - 0x88B96aF200c8a9c35442C8AC6cd3D22695AaE4F0
+    handler: src/EventHandlers.ts
+    events:
+    - event: AuthorityTransfer(address indexed authority)
+    - event: CrocColdCmd(bytes input)
+    - event: CrocColdProtocolCmd(bytes input)
+    - event: CrocHotCmd(bytes input, int128 baseFlow, int128 quoteFlow)
+    - event: CrocKnockoutCmd(bytes input, int128 baseFlow, int128 quoteFlow)
+    - event: CrocKnockoutCross(bytes32 indexed pool, int24 indexed tick, bool isBid, uint32 pivotTime, uint64 feeMileage, uint160 commitEntropy)
+    - event: CrocMicroBurnAmbient(bytes input, bytes output)
+    - event: CrocMicroBurnRange(bytes input, bytes output)
+    - event: CrocMicroMintAmbient(bytes input, bytes output)
+    - event: CrocMicroMintRange(bytes input, bytes output)
+    - event: CrocMicroSwap(bytes input, bytes output)
+    - event: CrocSwap(address indexed base, address indexed quote, uint256 poolIdx, bool isBuy, bool inBaseQty, uint128 qty, uint16 tip, uint128 limitPrice, uint128 minOut, uint8 reserveFlags, int128 baseFlow, int128 quoteFlow)
+    - event: CrocWarmCmd(bytes input, int128 baseFlow, int128 quoteFlow)
+    - event: DisablePoolTemplate(uint256 indexed poolIdx)
+    - event: HotPathOpen(bool )
+    - event: PriceImproveThresh(address indexed token, uint128 unitTickCollateral, uint16 awayTickTol)
+    - event: ProtocolDividend(address indexed token, address indexed recv)
+    - event: ResyncTakeRate(address indexed base, address indexed quote, uint256 indexed poolIdx, uint8 takeRate)
+    - event: SafeMode(bool )
+    - event: SetNewPoolLiq(uint128 liq)
+    - event: SetPoolTemplate(uint256 indexed poolIdx, uint16 feeRate, uint16 tickSize, uint8 jitThresh, uint8 knockout, uint8 oracleFlags)
+    - event: SetRelayerTakeRate(uint8 takeRate)
+    - event: SetTakeRate(uint8 takeRate)
+    - event: TreasurySet(address indexed treasury, uint64 indexed startTime)
+    - event: UpgradeProxy(address indexed proxy, uint16 proxyIdx)
+unordered_multichain_mode: true
