@@ -1,0 +1,35 @@
+type Pingu_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Pingu_OrderCancelled {
+  id: ID!
+  orderId: BigInt!
+  user: String!
+  reason: String!
+}
+
+type Pingu_OrderCreated {
+  id: ID!
+  orderId: BigInt!
+  user: String!
+  asset: String!
+  market: String!
+  margin: BigInt!
+  size: BigInt!
+  price: BigInt!
+  fee: BigInt!
+  isLong: Boolean!
+  orderType: BigInt!
+  isReduceOnly: Boolean!
+  expiry: BigInt!
+  cancelOrderId: BigInt!
+}
+
+type Pingu_SetGov {
+  id: ID!
+  prevGov: String!
+  nextGov: String!
+}
+

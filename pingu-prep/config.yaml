@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: pingu-prep
+networks:
+- id: 10143
+  start_block: 0
+  contracts:
+  - name: pingu
+    address:
+    - 0x3d7ec93875B6a6f0A5102fE29f887ee6E751b12F
+    handler: src/EventHandlers.ts
+    events:
+    - event: Initialized(uint8 version)
+    - event: OrderCancelled(uint256 indexed orderId, address indexed user, string reason)
+    - event: OrderCreated(uint256 indexed orderId, address indexed user, address indexed asset, string market, uint256 margin, uint256 size, uint256 price, uint256 fee, bool isLong, uint8 orderType, bool isReduceOnly, uint256 expiry, uint256 cancelOrderId)
+    - event: SetGov(address prevGov, address nextGov)
+unordered_multichain_mode: true
